@@ -1,0 +1,17 @@
+*.ucls
+.classpath
+.metadata/
+.project
+.pydevproject
+.settings/
+
+# General #
+*.png
+*.log*
+part-r-*
+part-m-*
+*.out
+*.swp
+*DS_Store
+.*~/target
+/target
