@@ -1,0 +1,36 @@
+!) 
+
+ran normalize.pig
+
+create a D/part-r-00000
+copied that on to vis.csv
+
+in 
+R
+  for (i in 1:size)
++   {
++     if(first[i,2]<100)
++     {
++       small[n] <- first[i,2]
++       n<-n+1
++     }
++     else {
++          big[m] <- first[i,2]
++          m<-m+1
++     }
++   }
+
+> 
+> hist(small)
+> hist(small, xlab='groups that have less than 100 elements')
+> hist(big, xlab='groups that have more than 100 elements')
+> hist(big, xlab='groups that have more than 100 elements')
+> hist(small, xlab='groups that have less than 100 elements')
+> hist(big, xlab='groups that have more than 100 elements')
+> hist(small, xlab='groups that have less than 100 elements', breaks=20)
+
+Call to APIs
+http://gdata.youtube.com/feeds/api/videos/9ZVwJfkM0Eg?v=2&alt=json
+
+look for 
+"title":{"$t":"Cyanide & Happiness - I Did It"}
