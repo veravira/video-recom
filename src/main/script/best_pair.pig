@@ -3,7 +3,22 @@
 -- pig -x local -f best_pair.pig -param filename=cc.csv
 
 
+DEFINE computeGrpSize(data, col)
+RETURNS dataOfSize
+{	
+	A = group $data by $col;
+	$dataOfSize = foreach A generate group, COUNT($1.$0);
+}
+
 data = load '$filename' using PigStorage('\t') as (first:chararray, second:chararray, pref:chararray);
+split data into popl if ($2=='left'), popr if ($3=='right');
+popl1 = foreach popl generate $0;
+popL = distinct popl1;
+popr1 = foreach popr generate $0;
+pop = union popl1, popr1;
+popD = distinct pop;
+
+     
 data1 = foreach data generate *;
 
 join_dd = join data by $0, data1 by $1;
