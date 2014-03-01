@@ -22,15 +22,16 @@ R
 
 > 
 > hist(small)
+
+> hist(big, xlab='groups that have more than 100 elements')
 > hist(small, xlab='groups that have less than 100 elements')
-> hist(big, xlab='groups that have more than 100 elements')
-> hist(big, xlab='groups that have more than 100 elements')
-> hist(small, xlab='groups that have less than 100 elements')
-> hist(big, xlab='groups that have more than 100 elements')
 > hist(small, xlab='groups that have less than 100 elements', breaks=20)
+
+https://www.googleapis.com/youtube/v3/videos?part=topicDetails&id=${VIDEO_ID}&key=AIzaSyDoJvvAj_1fiZWajF24I635VgJvdSHIQO0
+https://www.googleapis.com/youtube/v3/videos?part=topicDetails&id=9ZVwJfkM0Eg&key=AIzaSyDoJvvAj_1fiZWajF24I635VgJvdSHIQO0
 
 Call to APIs
 http://gdata.youtube.com/feeds/api/videos/9ZVwJfkM0Eg?v=2&alt=json
-
+http://gdata.youtube.com/feeds/api/videos?part=topicDetails&id=9ZVwJfkM0Eg
 look for 
 "title":{"$t":"Cyanide & Happiness - I Did It"}

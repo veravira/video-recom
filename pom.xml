@@ -10,6 +10,10 @@
             <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
         </repository>
         <repository>
+            <id>google-api-services</id>
+            <url>http://google-api-client-libraries.appspot.com/mavenrepo</url>
+        </repository>
+        <repository>
 		      <id>central</id>
 		      <name>Maven Repository Switchboard</name>
 		      <layout>default</layout>
@@ -27,6 +31,7 @@
         <project.youtube.analytics.version>v1-rev24-1.17.0-rc</project.youtube.analytics.version>
         <project.http.version>1.17.0-rc</project.http.version>
         <project.oauth.version>1.17.0-rc</project.oauth.version>
+        
     </properties>
 
   <dependencies>
@@ -84,7 +89,40 @@
 		<artifactId>httpclient</artifactId>
 		<version>4.0-alpha4</version>
 	</dependency>
-            
+	<dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-youtubeAnalytics</artifactId>
+            <version>${project.youtube.analytics.version}</version>
+        </dependency>
+	<dependency>
+		<groupId>com.google.apis</groupId>
+		<artifactId>google-api-services-youtube</artifactId>
+		<version>v3-rev40-1.13.2-beta</version>
+	</dependency>
+ <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.http-client</groupId>
+            <artifactId>google-http-client-jackson2</artifactId>
+            <version>${project.http.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.oauth-client</groupId>
+            <artifactId>google-oauth-client-jetty</artifactId>
+            <version>${project.oauth.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.collections</groupId>
+            <artifactId>google-collections</artifactId>
+            <version>1.0</version>
+        </dependency>
+                        
   </dependencies>
 
     <build>
