@@ -3,6 +3,9 @@
 -- pig -x local -f normalize.pig -param filename=cc.csv
 -- pig -x local -f normalize.pig -param filename=comedy_c.csv
 
+REGISTER '../../../target/recommend-1.0-SNAPSHOT-jar-with-dependencies.jar';
+
+DEFINE topic com.video.recommend.ExtractVideoTopicUDF;
 
 DEFINE computeGrpSize(data, col)
 RETURNS dataOfSize
@@ -20,8 +23,9 @@ filt1 = filter data by NOT( ($0=='#NAME?' AND $2=='left') OR ($1=='#NAME?' AND $
 filt2 = distinct filt1;  
 
 D = computeGrpSize(filt2, $0);
---D100 = limit D 100;
---dump D100;
+D100 = limit D 100;
+tops = foreach D100 generate $0, topic($0);
+dump tops;
 
 -- I am going to plot D to see the distribution of that in R
-store D into 'D';
+--store D into 'D';

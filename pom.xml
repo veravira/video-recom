@@ -75,26 +75,15 @@
       
       <!-- YouTube Analytics support -->
     <dependency>
-      <groupId>com.google.apis</groupId>
-      <artifactId>google-api-services-youtubeAnalytics</artifactId>
-      <version>${project.youtube.analytics.version}</version>
-    </dependency>
-    <!-- YouTube Data V3 support -->
-    <dependency>
-      <groupId>com.google.apis</groupId>
-      <artifactId>google-api-services-youtube</artifactId>
-      <version>${project.youtube.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.http-client</groupId>
-      <artifactId>google-http-client-jackson2</artifactId>
-      <version>${project.http.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.oauth-client</groupId>
-      <artifactId>google-oauth-client-jetty</artifactId>
-      <version>${project.oauth.version}</version>
-    </dependency>
+		<groupId>commons-httpclient</groupId>
+		<artifactId>commons-httpclient</artifactId>
+		<version>3.1</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpclient</artifactId>
+		<version>4.0-alpha4</version>
+	</dependency>
             
   </dependencies>
 
@@ -134,6 +123,21 @@
                     </execution>
                 </executions>
             </plugin>
+            
+            <plugin>
+		      <artifactId>maven-assembly-plugin</artifactId>
+		      <configuration>
+		        <archive>
+		          <manifest>
+		            <mainClass>com.video.recommend.ExtractVideoTopicUDF</mainClass>
+		          </manifest>
+		        </archive>
+		        <descriptorRefs>
+		          <descriptorRef>jar-with-dependencies</descriptorRef>
+		        </descriptorRefs>
+		      </configuration>
+    		</plugin>
+        
         </plugins>
     </build>
   
