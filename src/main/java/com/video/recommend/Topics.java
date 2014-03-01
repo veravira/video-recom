@@ -87,7 +87,7 @@ public class Topics  {
 
         try {
             // Retrieve a Freebase topic ID based on a user-entered query term.
-            String topicsId;
+            String topicsId ="";
 			try {
 				topicsId = getTopicId();
 			} catch (org.apache.http.HttpException e) {

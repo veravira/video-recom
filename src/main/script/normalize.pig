@@ -25,7 +25,8 @@ filt2 = distinct filt1;
 D = computeGrpSize(filt2, $0);
 D100 = limit D 100;
 tops = foreach D100 generate $0, topic($0);
-dump tops;
+store tops into 'tops';
+--dump tops;
 
 -- I am going to plot D to see the distribution of that in R
 --store D into 'D';
